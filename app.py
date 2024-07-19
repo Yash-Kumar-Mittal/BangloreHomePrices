@@ -9,11 +9,11 @@ def load_saved_artifacts():
     global __locations
     global __model
 
-    with open("model\columns.json", "r") as f:
+    with open("model/columns.json", "r") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk
 
-    with open("model\Banglore_home_prices_model.pickle", 'rb') as f:
+    with open("model/Banglore_home_prices_model.pickle", 'rb') as f:
         __model = pickle.load(f)
 
 def get_location_names():
